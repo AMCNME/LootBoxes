@@ -1,47 +1,47 @@
 
 /**
-* By Alvaro Trigo 
+* By Alvaro Trigo
 * Follow me on Twitter: https://twitter.com/imac2
 */
 (function(){
     init();
-    
+
     var g_containerInViewport;
     function init(){
         setStickyContainersSize();
         bindEvents();
     }
-    
+
     function bindEvents(){
-        window.addEventListener("wheel", wheelHandler);        
+        window.addEventListener("wheel", wheelHandler);
     }
-    
+
     function setStickyContainersSize(){
         document.querySelectorAll('.outerWrap').forEach(function(container){
             const stikyContainerHeight = container.querySelector('.innerWrap').scrollWidth;
             container.setAttribute('style', 'height: ' + stikyContainerHeight + 'px');
         });
     }
-    
+
     function isElementInViewport (el) {
         const rect = el.getBoundingClientRect();
         return rect.top <= 0 && rect.bottom > document.documentElement.clientHeight;
     }
-    
+
     function wheelHandler(evt){
-        
+
         const containerInViewPort = Array.from(document.querySelectorAll('.outerWrap')).filter(function(container){
             return isElementInViewport(container);
         })[0];
-    
+
         if(!containerInViewPort){
             return;
         }
-    
+
         var isPlaceHolderBelowTop = containerInViewPort.offsetTop < document.documentElement.scrollTop;
         var isPlaceHolderBelowBottom = containerInViewPort.offsetTop + containerInViewPort.offsetHeight > document.documentElement.scrollTop;
         let g_canScrollHorizontally = isPlaceHolderBelowTop && isPlaceHolderBelowBottom;
-    
+
         if(g_canScrollHorizontally){
             containerInViewPort.querySelector('.innerWrap').scrollLeft += evt.deltaY;
         }
@@ -55,7 +55,7 @@ function myFunction() {
     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     var scrolled = (winScroll / height) * 100;
     document.getElementById("myBar").style.width = scrolled + "%";
-} 
+}
 
 var timelinePoints = document.querySelectorAll('.timeline');
 for (let i = 0; i < timelinePoints.length; i++){
@@ -129,7 +129,7 @@ var titleStick = new Waypoint ({
             title.classList.remove("sticky")
         }
     }
-}) 
+})
 
 var playStoreWaypoint = new Waypoint ({
     element: document.getElementById("visExtContainer"),
@@ -143,7 +143,7 @@ var playStoreWaypoint = new Waypoint ({
 })
 
 var playStationWaypoint = new Waypoint ({
-    element: document.getElementById("playStation"),
+    element: document.getElementById("playstation"),
     handler: function(direction){
         if(direction === "down"){
             visBox.className = ("appVisBlockContainer bottomVis")
