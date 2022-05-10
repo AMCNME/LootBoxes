@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.4.4/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/3.0.0/noframework.waypoints.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div style="background-color: black">
+        <div class="titleDiv" id="firstTitle">
+            <div id="titleImage">
+                <img id="person" src="assets/Figure.png">
+                <div id="gemsScrollContainer">
+                    <div class="gems" id="frontGem"></div>
+                    <div class="gems" id="backGem"></div>
+                </div>
+                <img id="light" src="assets/light.png">
+                <img id="phoneFront" src="assets/Mobile Front.png">
+                <img id="phoneBack" src="assets/Mobile Back.png">
+            </div>
+        </div>
+        <div class="titleDiv" id="secondTitle">
+        </div>
+        <div class="titleDiv" id="lastTitle">
+            <div id="title">
+                <h1>Loot Boxes.</h1>
+                <h2>The gambling mechanics running rife in kids games while the government "drags their heels."</h2>
+                <div id="progressContainer" class="hide">
+                    <div class="progressBar" id="myBar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="firstContainer">
+        <div class="content">
+            <p style="font-weight: bold;">The UK government is set to publish a White Paper to tighten regulations against the 
+            £700m loot box industry, a third of which is spent by underage gamers, but campaigners fear it’s too little 
+            too late as the gaming industry jumps ship to new gambling mechanics.</p>
+            <p>Hassan Hadif thinks he spent close to a thousand pounds trying to win virtual items in video games as a teenager, 
+            having become addicted after he realised these items can be traded to others for real money.</p>
+            <p>“The rarest items in the games go for upwards of £1,000 on marketplaces and the idea of claiming an item of that 
+            value to my young mind was baffling,” the 20-year-old said.</p>
+            <p class="quote">“But it turns out I’ve spent hundreds nearing a thousand 
+                on this game and ended up with nothing of any particular rarity or value.”</p>
+            <p>What Hassan was buying was called a loot box – a virtual slot machine that offers players the chance to win certain items 
+            including weapons and costumes. Although a small amount can be earned for free, those with better odds at winning higher valued 
+            items usually require additional purchases. </p>
+            <p>Loot boxes, which are estimated to be worth £700m, just over 10% of the almost £6bn video game market in the UK, are not 
+            regulated under the current gambling laws. The Gambling Commission, which regulates UK gambling does not consider this part 
+            of its remit because items in loot boxes cannot be cashed out for real money. But researchers and parents are calling for 
+            something to be done to regulate these mechanics. </p>
+        </div>
+        <h1 id="visPreText">Loot boxes and similar gambling mechanics are commonly found in the most popular games, especially mobile games.</h1>
+    </div>
+    <div id="visExtContainer">
+        <div class="visIntContainer" id="leftVIC">
+            <div class="appVisBlockContainer" id="primaryVisContainer">
+                <div class="appVisBlock" id="primaryVis">
+                    <div id="appVis">
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                        <div class="appBlock"><h1>£</h1></div>
+                    </div>
+                    <div id="appVisLegend">
+                        <div class="appVisLegendItem"><div class="appBlock paid" style="margin-bottom:1vh;"><h1>£</h1></div>Paid game</div>
+                        <div class="appVisLegendItem"><div class="appBlock IAP" style="margin-bottom:1vh;"><h1>£</h1></div>Contains IAP</div>
+                        <div class="appVisLegendItem"><div class="appBlock lootBox IAP" style="margin-bottom:1vh;"><h1>£</h1></div>Loot Box</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="visIntContainer" id="rightVIC">
+            <div class="appVisBlockContainer">
+                <div class="appVisBlock visText active" id="playStore">
+                        <div class="visTextBox">
+                            <h1>Google Playstore</h1><br>
+                            <h2>All are free to download.</h2><br>
+                            <h2>Allcontain microtransactions</h2><br>
+                            <h2>19/25 contain gambling mechanics</h2><br>
+                        </div>
+                </div>
+            </div>
+            <div class="appVisBlockContainer">
+                <div class="appVisBlock visText" id="appStore">
+                    <div class="visTextBox">
+                        <h1>Apple App Store</h1><br>
+                        <h2>All are free to download.</h2><br>
+                        <h2>All contain microtransactions</h2><br>
+                        <h2>19/25 contain gambling mechanics</h2><br>
+                    </div>
+                </div>
+            </div>
+            <div class="appVisBlockContainer">
+                <div class="appVisBlock visText" id="pc">
+                    <div class="visTextBox">
+                        <h1>PC</h1><br>
+                        <h2>11/25 are free to download.</h2><br>
+                        <h2>19/25 contain microtransactions</h2><br>
+                        <h2>17/25 contain gambling mechanics</h2><br>
+                    </div>
+                </div>
+            </div>
+            <div class="appVisBlockContainer">
+                <div class="appVisBlock visText" id="xbox">
+                    <div class="visTextBox">
+                        <h1>XBOX</h1><br>
+                        <h2>9/25 are free to download.</h2><br>
+                        <h2>21/25 contain microtransactions</h2><br>
+                        <h2>9/25 contain gambling mechanics</h2><br>
+                    </div>
+                </div>
+            </div>
+            <div class="appVisBlockContainer">
+                <div class="appVisBlock visText" id="playStation">
+                    <div class="visTextBox">
+                        <h1>Playstation</h1><br>
+                        <h2>10/25 are free to download.</h2><br>
+                        <h2>19/25 contain microtransactions</h2><br>
+                        <h2>12/25 contain gambling mechanics</h2><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="outerWrap">
+            <div class="innerWrap">
+                <div class="horizontalBlock HBlockSlide">
+                    <h1>So how did we get here?</h1>
+                </div>
+                <div class="horizontalBlock">
+                    <div style="height: 10%"></div>
+                    <div class="timelineText">
+                        <h1>1983</h1>
+                        <p>The release of the Nintendo Entertainment System (NES) signals
+                            the end of arcade games dominating the market with a pay-per-play
+                            model, to home video consoles and one time purchases.
+                        </p>
+                    </div>
+                    <div class="timeline">
+                        <div class="timelineBar firstTB"></div>
+                        <div class="timelinePoint"></div>
+                    </div>
+                </div>
+                <div class="horizontalBlock">
+                    <div class="timelineText">
+                        <h1>Late 1990s</h1>
+                        <p> Many video game developers start releasing "expansion packs",
+                            providing extra levels to a game for an additional fee.
+                        </p>
+                    </div>
+                    <div class="timeline">
+                        <div class="timelinePoint"></div>
+                        <div class="timelineBar"></div>
+                    </div>
+                </div>
+                <div class="horizontalBlock">
+                    <div class="timelineText">
+                        <h1>Early 2000s</h1>
+                        <p>With the rise of online gaming, particularly Massively Multiplayer 
+                            Online Role Playing Games (MMORPGs) like <i>World of Warcraft</i>,
+                            subscription models become commonplace. The genre also popularises
+                            randomised rewards for in-game achievements.
+                        </p>
+                    </div>
+                    <div class="timeline">
+                        <div class="timelinePoint"></div>
+                        <div class="timelineBar"></div>
+                    </div>
+                </div>
+                <div class="horizontalBlock">
+                     <div class="timelineText">
+                        <h1>2004</h1>
+                        <p>First "loot box" like mechanic appears in <i>Maple Story</i>,
+                            a popular Japanese MMORPG. Users can purchase "Gachapon Tickets"
+                            that offer a randomised reward for ¥100.
+                        </p>
+                    </div>
+                    <div class="timeline">
+                        <div class="timelinePoint"></div>
+                        <div class="timelineBar"></div>
+                    </div>
+                </div>
+                <div class="horizontalBlock">
+                    <div class="timelineText">
+                        <h1>2010s</h1>
+                        <p>The rise of mobile gaming popularises "freemium" games,
+                            that have no upfront cost but offer in-game "microtransaction"
+                            purchases for items and extra content. First loot boxes start 
+                            to appear in western games like FIFA and Team Fortress 2, with
+                            the latter allowing items to be sold for real money.
+                        </p>
+                    </div>
+                    <div class="timeline">
+                        <div class="timelinePoint"></div>
+                        <div class="timelineBar"></div>
+                    </div>                   
+                </div>
+                <div class="horizontalBlock">
+                    <div class="timelineText">
+                        <h1>2016-17</h1>
+                        <p>Following the success of <i>Overwatch</i>, a popular 
+                            multiplayer first person shooter game containing lootboxes, many western
+                            developers begin implementing lootboxes. This is the 
+                            peak of the loot box phenomenom and is subject to 
+                            massive consumer backlash. EA Games holds the record
+                            for most downvoted reddit comment ever after defending
+                            loot boxes.
+                        </p>
+                    </div>
+                    <div class="timeline">
+                        <div class="timelinePoint"></div>
+                        <div class="timelineBar"></div>
+                    </div>
+                </div>
+                <div class="horizontalBlock">
+                    <div class="timelineText">
+                        <h1>Now</h1>
+                        <p>Lootboxes remain popular, particularly in mobile gaming.
+                            Many console and PC games are moving toward "battlepasses",
+                            subscriptions that offer players a chance to earn better
+                            rewards in game. Some companies begin to implement NFTs
+                            for in-game items, potentially ascribing them with real 
+                            world value.
+                        </p>
+                    </div>
+                    <div class="timeline">
+                        <div class="timelineBar lastTB"></div>
+                        <div class="timelinePoint"></div>
+                    </div>
+                </div>
+                <div class="horizontalBlock HBlockSlide">
+                    <h1>So what's the solution?</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="test"></div>
+    <div class="outerWrap">
+        <div class="innerWrap">
+            <div class="horizontalBlock"><h1>Loot</h1></div>
+            <div class="horizontalBlock"><h1>boxes</h1></div>
+            <div class="horizontalBlock"><h1>suck!</h1></div>
+            <div class="horizontalBlock"><h1>They're</h1></div>
+            <div class="horizontalBlock"><h1>pretty</h1></div>
+            <div class="horizontalBlock"><h1>bad</h1></div>
+            <div class="horizontalBlock"><h1>overall!</h1></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

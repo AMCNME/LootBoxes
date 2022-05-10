@@ -1,0 +1,445 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+  scroll-snap-type: y proximity;
+}
+
+#title{
+  height:fit-content;
+  top:0;
+  background-color: black;
+  color:white;
+  width:100%;
+}
+
+#subtitle{
+  font-size: 1vh;
+  z-index: 998;
+}
+
+.sticky {
+  position:fixed;
+  z-index: 999;
+}
+
+.stickySubtitle {
+  position:fixed;
+  height: 3vh;
+  top:52vh;
+  z-index: 998;
+  font-size: 1vh;
+}
+
+/* The progress container (grey background) */
+#progressContainer {
+  width: 100%;
+  height: 8px;
+  padding-left: 0;
+  padding-top: 1vh;
+}
+
+/* The progress bar (scroll indicator) */
+.progressBar {
+  height: 8px;
+  background: violet;
+  width: 0%;
+}
+.titleDiv{
+  height: 110vh;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.6s;
+  position:relative;
+  bottom:0;
+}
+
+
+#lastTitle{
+  background:linear-gradient(transparent, black 30%); 
+  z-index: 700;
+
+}
+
+.titleDiv + .container {
+  padding-top: 30vh;
+}
+
+#person {
+  width: 10%;
+  margin: auto;
+  padding-bottom: 5%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 53;
+}
+
+.hide{
+  opacity:0;
+  transition: 0.3s;
+}
+
+.visible{
+  opacity: 100;
+  transition: 0.3s;
+}
+
+#titleImage{
+  width:60vw;
+  height:100vh;
+  display:flex;
+  justify-content: center;
+}
+
+#phoneBack{
+  z-index: 50;
+  bottom:0;
+  width: 60%;
+  position: absolute;
+}
+
+#phoneFront{
+  z-index: 55;
+  bottom:0;
+  width: 60%;
+  position: absolute;
+}
+
+#light{
+  bottom:0;
+  z-index: 52;
+  width:50%;
+  position: absolute;
+}
+
+.gems {
+  background-image: url("assets/gems.png");
+  background-size: contain;
+  background-repeat: repeat-y;
+  position:absolute;
+  height:400%;
+}
+
+#frontGem{
+  height:200%;
+  width:100%;
+  animation: marquee 20s linear infinite;
+  animation-iteration-count: infinite;
+  z-index: 54;
+}
+
+#backGem{
+  height:150%;
+  width:75%;
+  animation: marquee 30s linear infinite;
+  animation-iteration-count: infinite;
+  filter: hue-rotate(180deg);
+  opacity: 50;
+  z-index: 51;
+}
+
+@keyframes marquee {
+  from   { background-position: 0% 0%}
+  to { background-position: 0% 200% }
+}
+
+#gemsScrollContainer{
+  bottom:0;
+  height:100%;
+  width: 30%;
+  position: absolute;
+  overflow: hidden;
+}
+
+#visPreText{
+  width:80%;
+  margin:auto;
+  text-align: center;
+  color: rebeccapurple;
+  font-size:5ch;
+  padding-bottom: 10vh;
+}
+
+#visExtContainer{
+  width: 75vw;
+  margin: auto;
+  padding-top:12.5vh;
+  padding-bottom:12.5vh;
+  height:375vh;
+}
+
+.visIntContainer{
+  width:50%;
+  height:inherit;
+  display:inline-block;
+  position: relative;
+}
+
+#rightVIC{
+  float: right;
+}
+
+#leftVIC{
+  float:left;
+}
+
+.appVisBlock{
+  background: darkslategray;
+  width: 100%;
+  min-height: fit-content;
+  height: 50vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 7vw;
+  border-bottom-right-radius: 7vw;
+  margin: 0;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+}
+
+.appVisBlockContainer {
+  height:75vh;
+  position: relative;
+  width:100%;
+  display:flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.visTextBox{
+  color:white;
+  width:90%;
+  scroll-snap-align: center;
+}
+
+.stickyVis{
+  position: sticky;
+  top:50%;
+  transform: translateY(-50%);
+}
+
+.bottomVis{
+  position:absolute;
+  bottom: 0;
+}
+
+#primaryVis {
+  border-top-right-radius: 0vw;
+  border-bottom-right-radius: 0vw;
+  border-top-left-radius: 7vw;
+  border-bottom-left-radius: 7vw;
+  background-color: rebeccapurple;
+}
+
+#primaryVisContainer {
+  border-top-right-radius: 0vw;
+  border-bottom-right-radius: 0vw;
+  border-top-left-radius: 7vw;
+  border-bottom-left-radius: 7vw;
+}
+
+.active {
+  background-color: rebeccapurple;
+  transition: 0.4s;
+}
+
+.appVisLegendItem{
+  margin-bottom: 5vh;
+  width: 5vw;
+  color: white;
+  text-align: left;
+}
+
+#appVis{
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  width: 30vh;
+  height: 30vh;
+  margin: auto;
+  column-gap: 1vw;
+  row-gap: 1vw;
+  align-items: center;
+  justify-items: center;
+}
+
+.appBlock {
+  width: 3vh;
+  height: 3vh;
+  background-color: violet;
+  border-radius: 0.65vw;
+  border: 0.5vw solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+  transition: 0.3s;
+}
+
+.appBlock h1 {
+  font-size: 2vw;
+}
+
+.paid {
+  color: rebeccapurple;
+  transition: 0.3s;
+}
+
+.IAP{
+  background-color: white;
+  transition: 0.3s;
+}
+
+.lootBox{
+  border-color: red;
+  transition: 0.3s;
+}
+
+.container {
+  width: 100%;
+  min-height:100vh;
+  background-color: lavender;
+  z-index: 60;
+  position: relative;
+}
+
+.content {
+  height: fit-content;
+  width: 40%;
+  margin: auto;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  align-items: center;
+  justify-content: center;
+  line-height: 2em;
+}
+
+.content *{
+  margin-bottom: 5vh;
+}
+
+.content h1{
+  color: rebeccapurple;
+  font-size: larger;
+}
+
+.quote{
+  font-size: 2em;
+  color: rebeccapurple;
+}
+
+.innerWrap{
+    display: flex;
+    overflow-x: hidden;
+    position: sticky;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+  }
+.horizontalBlock{
+    min-width: 75vw;
+    min-height: 100vh;
+    font-size: 3ch;
+    text-align: center;
+    position: relative;
+    background-color: rebeccapurple;
+    color: white;
+  }
+
+.HBlockSlide{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+}
+
+.horizontalBlock h1 {
+    margin: auto;
+  }
+  
+.horizontalBlock:nth-child(even){
+    background: darkslategray;
+  }
+
+#test{
+    background: purple;
+    width: 100vw;
+    height: 100vh;
+}
+
+.timeline {
+    position: absolute;
+    display: flex;
+    overflow: auto;
+    height: 20%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    bottom: 5vh;
+  }
+
+.timelineBar {
+    overflow-x: visible;
+    height: 1vh;
+    width: 100%;
+    background-color: black;
+  }
+
+.firstTB{
+  width: 50%;
+  position:relative;
+  left:25%;
+  }
+
+.lastTB{
+  width: 50%;
+  position:relative;
+  right:25%;
+}
+ 
+.timelinePoint{
+  position: absolute;
+  width: 5%;
+  height: 0;
+  padding-bottom: 5%;
+  border: 4px solid black;
+  border-radius: 50%;
+  background-color: black;
+  transition: 0.3s;
+}
+
+.timelinePointActive{
+  position: absolute;
+  width: 7%;
+  height: 0;
+  padding-bottom: 7%;
+  border: 6px solid black;
+  border-radius: 50%;
+  background-color: white;
+  transition: 0.3s;
+}
+
+.timelineText {
+  position: absolute;
+  width: 80%;
+  margin: auto;
+  top: 15vh;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+.timelineText p {
+  max-height:50%;
+  font-size: 80%;
+}
+
