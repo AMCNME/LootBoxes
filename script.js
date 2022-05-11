@@ -111,7 +111,7 @@ var textStartWaypoint = new Waypoint ({
             document.getElementById("progressContainer").className = ("visible")
         }else if (direction == 'up'){
             document.getElementById("person").classList.remove("hide")
-            document.getElementById("person").className = ("hide")
+            document.getElementById("progressContainer").className = ("hide")
         }
     }
 })

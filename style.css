@@ -6,14 +6,21 @@
 
 html{
   scroll-snap-type: y proximity;
+  overflow-x: hidden;
+  width:100%;
 }
 
 #title{
   height:fit-content;
   top:0;
+  left:0;
   background-color: black;
   color:white;
   width:100%;
+}
+
+#title *{
+  padding-left: 5vw;
 }
 
 #subtitle{
@@ -38,6 +45,8 @@ html{
   width:fit-content;
   height:fit-content;
   margin:auto;
+  padding-bottom: 10vh;
+  padding-top: 10vh;
 }
 
 /* The progress container (grey background) */
@@ -68,7 +77,6 @@ html{
 
 
 #lastTitle{
-  background:linear-gradient(transparent, black 30%); 
   z-index: 700;
 
 }
@@ -147,7 +155,34 @@ html{
   width:75%;
   animation: marquee 30s linear infinite;
   animation-iteration-count: infinite;
-  filter: hue-rotate(180deg);
+  filter: brightness(50%);
+  opacity: 50;
+  z-index: 51;
+}
+
+.gamble {
+  background-image: url("assets/gambling.png");
+  background-size: contain;
+  background-repeat: repeat-y;
+  position:absolute;
+  height:400%;
+}
+
+#frontGamble{
+  height:200%;
+  width:100%;
+  animation: marquee 20s linear infinite;
+  animation-iteration-count: infinite;
+  z-index: 54;
+  filter: hue-rotate(220deg);
+}
+
+#backGamble{
+  height:150%;
+  width:75%;
+  animation: marquee 30s linear infinite;
+  animation-iteration-count: infinite;
+  filter: brightness(50%) hue-rotate(220deg);
   opacity: 50;
   z-index: 51;
 }
@@ -165,6 +200,21 @@ html{
   overflow: hidden;
 }
 
+#gambleScrollContainer{
+  bottom:0;
+  height:100%;
+  width: 30%;
+  position: absolute;
+  overflow: hidden;
+}
+
+#gambleFade{
+  width:100%;
+  height:100%;
+  background:linear-gradient(transparent, black 70%); 
+  z-index: 600;
+}
+
 #visPreText{
   width:80%;
   margin:auto;
@@ -177,8 +227,6 @@ html{
 #visExtContainer{
   width: 100vw;
   margin: auto;
-  padding-top:12.5vh;
-  padding-bottom:12.5vh;
   height:375vh;
   background-color: #e6e6ff;
 }
@@ -262,18 +310,30 @@ html{
 }
 
 .appVisLegendItem{
-  margin-bottom: 5vh;
-  width: 5vw;
+  width:10vh;
+  height:10vh;
   color: white;
   text-align: left;
+  display:flex;
+  align-items: center;
+}
+
+.appVisLegendItem h1{
+  font-size: 1em;
+  margin-left: 0.5vw;
+}
+
+#appVisLegend{
+  display: grid;
+  height: 30vh;
 }
 
 #appVis{
   display: grid;
   grid-template-columns: auto auto auto auto auto;
-  width: 30vh;
-  height: 30vh;
-  margin: auto;
+  max-width: 40vh;
+  max-height: 40vh;
+  margin-right:5vw;
   column-gap: 1vw;
   row-gap: 1vw;
   align-items: center;
@@ -281,8 +341,10 @@ html{
 }
 
 .appBlock {
-  width: 3vh;
-  height: 3vh;
+  width: 4vh;
+  height: 4vh;
+  min-width: 4vh;
+  min-height: 4vh;
   background-color: violet;
   border-radius: 0.65vw;
   border: 0.75vh solid transparent;
@@ -322,27 +384,31 @@ html{
 
 .content {
   height: fit-content;
-  width: 40%;
+  width: 50%;
   margin: auto;
   padding-top: 10vh;
   padding-bottom: 10vh;
   align-items: center;
   justify-content: center;
   line-height: 2em;
+  font-size: 1.2em;
 }
 
 .content *{
-  margin-bottom: 5vh;
+  margin-bottom: 1em;
 }
 
 .content h1{
   color: rebeccapurple;
   font-size: larger;
+
 }
 
 .quote{
-  font-size: 2em;
+  font-size: 1.5em;
   color: rebeccapurple;
+  margin-bottom: 1.5em;
+  margin-top: 1.5em;
 }
 
 .innerWrap{
@@ -356,7 +422,7 @@ html{
 .horizontalBlock{
     min-width: 75vw;
     min-height: 100vh;
-    font-size: 3ch;
+    font-size: 2vw;
     text-align: center;
     position: relative;
     background-color: rebeccapurple;
@@ -451,3 +517,62 @@ html{
   font-size: 80%;
 }
 
+
+#a {
+  position:absolute;
+  display: flex;
+  top:20vh;
+  left:20vh;
+  width:60vw;
+  height:50vh;
+  margin:auto;
+  background-color: aliceblue;
+}
+
+#barContainer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height:100%;
+  display:inline-block;
+  transform: rotate(180deg);
+}
+.bar{
+  background-color: red;
+  width: 8%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  float: left;
+  align-items: top;
+}
+
+.bar *{
+  position:absolute;
+  transform: rotate(180deg);
+  color: white;
+  font-size: 1.5vw;
+  top:1em;
+}
+
+#bar1{
+  height: 81.2%;
+  left:4%
+}
+#bar2{
+  height: 79.2%;
+  left:4%
+}
+
+#bar3{
+  height: 77.2%;
+}
+#bar4{
+  height: 74.8%;
+}
+#bar5{
+  height: 71.2%;
+}
+
+#bar6{
+  height: 61.2%;
+}
