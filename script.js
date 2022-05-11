@@ -76,11 +76,6 @@ for (let i = 0; i < timelinePoints.length; i++){
 
 var visBox = document.getElementById("primaryVisContainer");
 var dataText = document.querySelectorAll(".visText")
-var playStore = "/data/playstore.csv";
-var appStore = "/data/appstore.csv";
-var pc = "/data/steam.csv";
-var xbox = "/data/xbox.csv";
-var playStation = "/data/playstation.csv";
 var appBlocks = document.getElementById("appVis").getElementsByClassName("appBlock");
 
 /** Generate the visualisation for marketplaces */
@@ -143,7 +138,7 @@ var playStoreWaypoint = new Waypoint ({
 })
 
 var playStationWaypoint = new Waypoint ({
-    element: document.getElementById("playStation"),
+    element: document.getElementById("playstation"),
     handler: function(direction){
         if(direction === "down"){
             visBox.className = ("appVisBlockContainer bottomVis")
