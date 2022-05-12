@@ -8,7 +8,7 @@ html{
   scroll-snap-type: y proximity;
 }
 
-#title{
+#title {
   height:fit-content;
   background-color: black;
   color:white;
