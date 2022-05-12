@@ -32,8 +32,11 @@ html{
   width:fit-content;
   height:fit-content;
   margin:auto;
-  padding-bottom: 10vh;
-  padding-top: 10vh;
+  padding-bottom: 5vh;
+  padding-top: 5vh;
+  margin-bottom:0;
+  border-top: 3px rebeccapurple solid;
+  border-bottom: 3px rebeccapurple solid;
 }
 
 /* The progress container (grey background) */
@@ -65,7 +68,13 @@ html{
 
 #lastTitle{
   z-index: 700;
+}
 
+#byline{
+  position: absolute;
+  left:5vw;
+  bottom:30vh;
+  color: white;
 }
 
 .titleDiv + .container {
@@ -445,7 +454,7 @@ html{
     width: 100%;
     align-items: center;
     justify-content: center;
-    bottom: 5vh;
+    bottom: 0;
   }
 
 .timelineBar {
@@ -493,29 +502,33 @@ html{
   position: absolute;
   width: 80%;
   margin: auto;
-  top: 15vh;
+  padding-top: 15vh;
   left:0;
   right:0;
-  bottom:0;
+  top:0;
 }
 
-.timelineText p {
+.timelineCopy {
   max-height:50%;
   font-size: 80%;
 }
 
+.timelineCopyh1{
+  font-size: 2em;
+}
+
+
 .timelineImgContainer{
-  height: 30vh;
+  height: 40vh;
   width: fit-content;
   margin:auto;
   margin-top: 5vh;
 }
-
 .caption{
-  font-size: 50%;
+  font-size: 60%;
 }
 .timelineImgContainer img{
-  height: 30vh;
+  height: 35vh;
 }
 
 
