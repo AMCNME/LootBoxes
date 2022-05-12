@@ -18,7 +18,7 @@
 
     function setStickyContainersSize(){
         document.querySelectorAll('.outerWrap').forEach(function(container){
-            const stikyContainerHeight = container.querySelector('.innerWrap').scrollWidth;
+            const stikyContainerHeight = (container.querySelector('.innerWrap').scrollWidth);
             container.setAttribute('style', 'height: ' + stikyContainerHeight + 'px');
         });
     }
@@ -48,6 +48,7 @@
     }
     })();
 
+    /** Progress Bar */
 window.onscroll = function() {myFunction()};
 
 function myFunction() {
