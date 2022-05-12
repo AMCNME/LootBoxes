@@ -6,40 +6,27 @@
 
 html{
   scroll-snap-type: y proximity;
-  overflow-x: hidden;
-  width:100%;
 }
 
 #title{
   height:fit-content;
-  top:0;
-  left:0;
   background-color: black;
   color:white;
   width:100%;
+
 }
 
 #title *{
   padding-left: 5vw;
 }
 
-#subtitle{
-  font-size: 1vh;
-  z-index: 998;
-}
-
 .sticky {
   position:fixed;
   z-index: 999;
+  top:0;
+  left:0;
 }
 
-.stickySubtitle {
-  position:fixed;
-  height: 3vh;
-  top:52vh;
-  z-index: 998;
-  font-size: 1vh;
-}
 
 .sectionBreak{
   width:fit-content;
@@ -517,62 +504,19 @@ html{
   font-size: 80%;
 }
 
-
-#a {
-  position:absolute;
-  display: flex;
-  top:20vh;
-  left:20vh;
-  width:60vw;
-  height:50vh;
+.timelineImgContainer{
+  height: 30vh;
+  width: fit-content;
   margin:auto;
-  background-color: aliceblue;
+  margin-top: 5vh;
 }
 
-#barContainer{
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height:100%;
-  display:inline-block;
-  transform: rotate(180deg);
+.caption{
+  font-size: 50%;
 }
-.bar{
-  background-color: red;
-  width: 8%;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
-  float: left;
-  align-items: top;
+.timelineImgContainer img{
+  height: 30vh;
 }
 
-.bar *{
-  position:absolute;
-  transform: rotate(180deg);
-  color: white;
-  font-size: 1.5vw;
-  top:1em;
-}
 
-#bar1{
-  height: 81.2%;
-  left:4%
-}
-#bar2{
-  height: 79.2%;
-  left:4%
-}
 
-#bar3{
-  height: 77.2%;
-}
-#bar4{
-  height: 74.8%;
-}
-#bar5{
-  height: 71.2%;
-}
-
-#bar6{
-  height: 61.2%;
-}
