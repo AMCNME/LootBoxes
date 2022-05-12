@@ -405,6 +405,20 @@ html{
   color: rebeccapurple;
   margin-bottom: 1.5em;
   margin-top: 1.5em;
+  border-top: 3px rebeccapurple solid;
+  border-bottom: 3px rebeccapurple solid;
+}
+
+.stats{
+  font-size: 1.5em;
+  color: rebeccapurple;
+  margin-bottom: 1.5em;
+  margin-top: 1.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-top: 3px rebeccapurple solid;
+  border-bottom: 3px rebeccapurple solid;
+  list-style:square inside;
 }
 
 .innerWrap{
