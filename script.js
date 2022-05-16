@@ -76,7 +76,6 @@ for (let i = 0; i < timelinePoints.length; i++){
 
 
 var visBox = document.getElementById("primaryVisContainer");
-var dataText = document.querySelectorAll(".visText")
 var appBlocks = document.getElementById("appVis").getElementsByClassName("appBlock");
 
 /** Generate the visualisation for marketplaces */
@@ -99,6 +98,7 @@ function appBlocksVis(data){
     }
 };
 
+/** Hide the "person" illustration after it has served its purpose */
 var textStartWaypoint = new Waypoint ({
     element: document.getElementById("firstContainer"),
     handler: function(direction){
@@ -116,6 +116,8 @@ var title = document.getElementById("title");
 var secondTitle = document.getElementById("secondTitle")
 var lastTitle = document.getElementById("lastTitle")
 
+
+/* Stick the title bar to the top of the page */
 var titleStick = new Waypoint ({
     element: title,
     handler: function(direction){
@@ -127,6 +129,7 @@ var titleStick = new Waypoint ({
     }
 })
 
+/* Stick the visualisation to the viewport */
 var playStoreWaypoint = new Waypoint ({
     element: document.getElementById("visExtContainer"),
     handler: function(direction){
@@ -150,15 +153,24 @@ var playStationWaypoint = new Waypoint ({
     offset: "20%",
 })
 
+/* Select all elements with visText, each element has an ID pertaining to the
+storefront covered. */ 
+var dataText = document.querySelectorAll(".visText")
+/* Get the data for the visualisation on the relevant block. */
 for (let i=0; i < dataText.length; i++){
     new Waypoint ({
         element: dataText[i],
         handler: function(direction){
             let previous = this.previous();
+            /* Build string based on element ID to link to correct CSV */
             let visKey = "/data/" + this.element.id + ".csv";
             appBlocksVis(visKey)
             if(direction === "down"){
+                /* Add active class to change colour of element */
                 this.element.classList.add("active");
+                /*As this uses "previous" variable from waypoints.js, added cases to stop
+                from running if there was no previous waypoint, or if the previous
+                waypoint was for a different part of the site */
                 if(previous !== null){
                     if(previous.id !== 'visExtContainer' && previous.className !== 'stickyVis'){
                         previous.element.classList.remove("active")

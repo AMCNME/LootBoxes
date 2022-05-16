@@ -217,7 +217,7 @@ html{
   text-align: center;
   color: rebeccapurple;
   font-size:5ch;
-  padding-bottom: 10vh;
+  padding-bottom: 2vh;
 }
 
 #visExtContainer{
@@ -543,6 +543,14 @@ html{
 }
 .timelineImgContainer img{
   height: 35vh;
+}
+
+#dataSource{
+  color:grey;
+  width:80%;
+  margin:auto;
+  text-align: center;
+  padding-bottom: 10vh;
 }
 
 
